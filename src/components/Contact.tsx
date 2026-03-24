@@ -35,8 +35,8 @@ const Fluid3DButton = ({ icon: Icon, label, color, href, delay, isDownload }: an
     <div style={{ perspective: 1200 }}>
       <motion.a 
         href={href}
-        target={isDownload ? undefined : "_blank"}
-        rel={isDownload ? undefined : "noopener noreferrer"}
+        target={(isDownload || href.startsWith("mailto:")) ? undefined : "_blank"}
+        rel={(isDownload || href.startsWith("mailto:")) ? undefined : "noopener noreferrer"}
         download={isDownload ? "Sparsh_Shankhdhar_Resume.pdf" : undefined}
         initial={{ opacity: 0, scale: 0.5, y: 50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
