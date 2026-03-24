@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { Mail } from "lucide-react";
+import { Mail, FileText } from "lucide-react";
 import React from "react";
 import CyberName from "./CyberName";
 
@@ -17,7 +17,7 @@ const GithubIcon = ({ size = 24, color = "currentColor", className = "", style }
   </svg>
 );
 
-const Fluid3DButton = ({ icon: Icon, label, color, href, delay }: any) => {
+const Fluid3DButton = ({ icon: Icon, label, color, href, delay, isDownload }: any) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
@@ -35,8 +35,9 @@ const Fluid3DButton = ({ icon: Icon, label, color, href, delay }: any) => {
     <div style={{ perspective: 1200 }}>
       <motion.a 
         href={href}
-        target="_blank"
-        rel="noopener noreferrer"
+        target={isDownload ? undefined : "_blank"}
+        rel={isDownload ? undefined : "noopener noreferrer"}
+        download={isDownload ? "Sparsh_Shankhdhar_Resume.pdf" : undefined}
         initial={{ opacity: 0, scale: 0.5, y: 50 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
@@ -94,8 +95,9 @@ const Fluid3DButton = ({ icon: Icon, label, color, href, delay }: any) => {
 export default function Contact() {
   const socialLinks = [
     { label: "LinkedIn", icon: LinkedinIcon, color: "#0077b5", href: "https://www.linkedin.com/in/sparsh-shankhdhar-a294b224b/" },
-    { label: "GitHub", icon: GithubIcon, color: "#ffffff", href: "https://github.com/" },
-    { label: "Gmail", icon: Mail, color: "#EA4335", href: "mailto:sparsh@example.com" }
+    { label: "GitHub", icon: GithubIcon, color: "#ffffff", href: "https://github.com/ggutsyss235" },
+    { label: "Gmail", icon: Mail, color: "#EA4335", href: "mailto:ggsparsh235@gmail.com?subject=Contacting Mr. Sparsh Shankhdhar" },
+    { label: "Resume", icon: FileText, color: "#00E0FF", href: "/resume.pdf", isDownload: true }
   ];
 
   return (
