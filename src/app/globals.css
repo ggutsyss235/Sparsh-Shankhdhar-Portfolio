@@ -1,49 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* Ethereal Engine Core Values */
+  --void: #000000;
+  --surface-low: #080808;
+  --surface-medium: #111111;
+  --surface-high: #1a1a1a;
+  
+  --accent-primary: #06b6d4; /* Cyber Cyan */
+  --accent-secondary: #10b981; /* Deep Emerald */
+  
+  --on-surface: #ffffff;
+  --on-surface-muted: #888888;
+  
+  --glass-border: rgba(255, 255, 255, 0.05);
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--void);
+  color: var(--on-surface);
+  overflow-x: hidden;
+  margin: 0;
+  cursor: none;
+}
+
+a, button, [role="button"], input, select, textarea {
+  cursor: none !important;
+}
+
+h1, h2, h3, h4, h5, h6, .display-text {
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+a:hover {
+  color: var(--accent-primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layering System */
+.surface-level-1 {
+  background-color: var(--surface-low);
+  border-radius: 1rem;
+}
+
+.surface-level-2 {
+  background-color: var(--surface-high);
+  border-radius: 0.75rem;
+}
+
+/* Glass & Gradients */
+.glass-panel {
+  background-color: rgba(53, 53, 52, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Ambient Glows */
+.ambient-glow {
+  box-shadow: 0 0 60px rgba(6, 182, 212, 0.08);
+}
+
+.ambient-glow-hover:hover {
+  box-shadow: 0 0 60px rgba(16, 185, 129, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Buttons */
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: var(--void);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+}
+
+.btn-glass {
+  background: rgba(53, 53, 52, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  color: var(--on-surface);
+  border-radius: 0.75rem;
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s;
+}
+
+.btn-glass:hover {
+  background: rgba(53, 53, 52, 0.4);
+  backdrop-filter: blur(20px);
+  transform: scale(1.02);
+}
+
+/* Base Spacing */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+section {
+  padding: 7rem 0;
+  position: relative;
+}
+
+.section-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 4rem;
+  text-align: left;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--void);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-high);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
 }
