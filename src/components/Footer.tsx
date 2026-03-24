@@ -11,16 +11,8 @@ export default function Footer() {
           Sparsh Shankhdhar
         </div>
         <p style={{ color: "var(--text-muted)", fontSize: "0.9rem" }}>
-          © {new Date().getFullYear()} All rights reserved. Built with Next.js & Framer Motion.
+          © {new Date().getFullYear()} All rights reserved.
         </p>
-        <div style={{ display: "flex", gap: "1.5rem", marginTop: "1rem" }}>
-          <a href="https://www.linkedin.com/in/sparsh-shankhdhar-a294b224b" target="_blank" rel="noopener noreferrer" style={{ color: "var(--text-muted)" }}>
-            LinkedIn
-          </a>
-          <a href="mailto:ggsparsh235@gmail.com" style={{ color: "var(--text-muted)" }}>
-            Email
-          </a>
-        </div>
       </div>
     </footer>
   );
