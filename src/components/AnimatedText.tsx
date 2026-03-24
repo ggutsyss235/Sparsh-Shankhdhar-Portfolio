@@ -35,7 +35,7 @@ export default function AnimatedText({
   return (
     <Wrapper className={className}>
       <motion.span 
-        variants={container} 
+        variants={container as any} 
         initial="hidden" 
         whileInView="visible" 
         viewport={{ once, margin: "-100px" }}
@@ -43,7 +43,7 @@ export default function AnimatedText({
       >
         {words.map((word: string, index: number) => (
           <span key={index} style={{ overflow: "hidden", display: "inline-block", marginRight: "0.25em", paddingBottom: "0.1em" }}>
-            <motion.span variants={child} style={{ display: "inline-block" }}>
+            <motion.span variants={child as any} style={{ display: "inline-block" }}>
               {word === "{" ? <span className="text-gradient">{word}</span> : word}
             </motion.span>
           </span>

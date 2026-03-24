@@ -43,11 +43,11 @@ const KineticMarquee = ({ items, direction = 1, speed = 40 }: { items: string[],
             }}
             onMouseOver={(e) => {
               e.currentTarget.style.color = index % 2 === 0 ? "var(--on-surface)" : "var(--accent-primary)";
-              e.currentTarget.style.WebkitTextStroke = "0px";
+              e.currentTarget.style.webkitTextStroke = "0px";
             }}
             onMouseOut={(e) => {
               e.currentTarget.style.color = "transparent";
-              e.currentTarget.style.WebkitTextStroke = index % 2 === 0 ? "1px var(--on-surface-muted)" : "1px var(--accent-primary)";
+              e.currentTarget.style.webkitTextStroke = index % 2 === 0 ? "1px var(--on-surface-muted)" : "1px var(--accent-primary)";
             }}
           >
             {skill}
