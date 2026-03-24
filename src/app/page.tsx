@@ -11,6 +11,7 @@ import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import AnimatedText from "@/components/AnimatedText";
 import CyberName from "@/components/CyberName";
+import CyberTerminal from "@/components/CyberTerminal";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -38,12 +39,12 @@ export default function Home() {
           </motion.div>
         </div>
 
-        <div className="container" style={{ position: "relative", zIndex: 10, width: "100%" }}>
+        <div className="container" style={{ position: "relative", zIndex: 10, width: "100%", display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "4rem" }}>
           <motion.div 
             initial="hidden" 
             animate="visible" 
             transition={{ staggerChildren: 0.15 }}
-            style={{ maxWidth: "850px" }}
+            style={{ flex: "1 1 500px", maxWidth: "800px" }}
           >
             {/* Availability Status */}
             <motion.div variants={fadeUp} style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "2.5rem" }}>
@@ -80,6 +81,11 @@ export default function Home() {
               </Link>
             </motion.div>
           </motion.div>
+          
+          {/* CyberTerminal on the Right */}
+          <div style={{ flex: "1 1 400px", display: "flex", justifyContent: "center" }}>
+             <CyberTerminal />
+          </div>
         </div>
 
         {/* Scroll Indicator */}
