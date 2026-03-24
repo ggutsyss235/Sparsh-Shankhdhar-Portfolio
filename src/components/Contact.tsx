@@ -96,7 +96,7 @@ export default function Contact() {
   const socialLinks = [
     { label: "LinkedIn", icon: LinkedinIcon, color: "#0077b5", href: "https://www.linkedin.com/in/sparsh-shankhdhar-a294b224b/" },
     { label: "GitHub", icon: GithubIcon, color: "#ffffff", href: "https://github.com/ggutsyss235" },
-    { label: "Gmail", icon: Mail, color: "#EA4335", href: "mailto:ggsparsh235@gmail.com?subject=Contacting Mr. Sparsh Shankhdhar" },
+    { label: "Gmail", icon: Mail, color: "#EA4335", href: "mailto:codeforsparsh512@gmail.com?subject=Interested in Mr. Sparsh Shankhdhar's collaboration" },
     { label: "Resume", icon: FileText, color: "#00E0FF", href: "/resume.pdf", isDownload: true }
   ];
 

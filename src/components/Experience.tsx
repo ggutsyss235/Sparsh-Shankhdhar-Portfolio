@@ -9,7 +9,7 @@ const experiences = [
   {
     title: "AI Integration Engineer (Intern)",
     company: "Where U Elevate",
-    date: "2024 - Present",
+    date: "June 2025 - August 2025",
     description: "Operated relentlessly as the vanguard of core AI integration. Executed the meticulous deployment of cognitive algorithms, optimizing neural frameworks, and engineering high-velocity data processing pipelines. Defined by a relentless drive to overcome severe infrastructural bottlenecks and build autonomous, world-class ML solutions.",
     highlight: true
   },
